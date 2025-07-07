@@ -29,4 +29,13 @@ def hangman():
         if guess in word:
             print("✅ Good guess!\n")
             for i in range(len(word)):
-                i
+                if word[i] == guess:
+                    guessed_word[i] = guess
+        else:
+            print("❌ Incorrect guess!\n")
+            attempts -= 1
+
+    if '_' not in guessed_word:
+        print('🎉 Congratulations! You guessed the word:', word)
+    else:
+        print('💀 Game Over! The word was:', word)
